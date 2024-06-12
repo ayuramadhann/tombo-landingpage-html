@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tombo Enterprise</title>
+  <meta name="description" content="My Harmonica World and Tian Xian Liquid">
+  <meta name="keywords" content="Harmonica, Liquid">
+  <meta name="author" content="Tombo Enterprise">
+  <meta name="robots" content="harmonica, liquid">
+
+  <meta property="og:title" content="Tombo Enterprise">
+  <meta property="og:description" content="My Harmonica World and Tian Xian Liquid">
+  <meta property="og:image" content="TomboLogo.jpg">
+  <meta property="og:url" content="https://tombo.com.my">
+
+  <!-- Favicon -->
+  <link rel="icon" href="TomboLogo.jpg" type="image/x-icon">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap');
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container-fluid{
+      align-items: center;
+      display: flex;
+      font-size: 18px;
+      /* height: 100vh; */
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      transform-style: preserve-3d;
+      perspective: 100px;
+    }
+
+    .container-fluid:before {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)),
+        url(Background-image.jpg) no-repeat bottom;
+      background-size: cover;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    html {
+      font-size: 16px;
+      font-weight: 400;
+      background: #efefef;
+      font-family: Plus Jakarta Sans;
+      scroll-behavior: smooth;
+    }
+    section {
+      text-align: center;
+      padding: 1.5em 1em;
+    }
+
+    .header {
+      width: 960px;
+      margin: 1em auto;
+      text-align: center;
+      border-bottom: 2px solid rgba(29, 29, 29, 0.6);
+      padding: 1em;
+    }
+
+    .row {
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .heading {
+      margin-bottom: 1em;
+    }
+    .section-3 {
+      gap: 5em;
+    }
+
+    .card {
+      flex: 1;
+      margin: 0 10px;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 3em;
+    }
+
+    .card .img {
+      height: 200px;
+      margin: 16px;
+      width: calc(100% - 32px);
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;    
+    }
+
+    .card .img:hover {
+      filter: brightness(75%);
+    }
+
+    .card .img img {
+      height: 40%;
+      width: 80%;
+      transition: all 0.2s ease-in-out;
+
+    }
+
+    .card .img img:hover {
+      transform: scale(1.1);
+      /* Scale up by 10% on hover */
+    }
+
+    .card .content {
+      padding: 15px 40px 25px 40px;
+      background: #4CACAA;
+      color: #ffffff;
+    }
+
+    .card .content .title {
+      text-align: justify;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    .card .content .sub-title {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: left;
+    }
+    .card .content p {
+      text-align: justify;
+      margin: 10px 0;
+      color: #ffffff;
+      line-height: 1.5;
+      max-height: 6em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      font-size: 15px;
+
+      font-weight: 500;
+    }
+
+    .card .content a:link {
+      color: white;
+    }
+
+    .sticky {
+      top: 0;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 50px;
+      height: 7em;
+      border-bottom: 1px solid rgba(238, 238, 238, 0.3);
+    }
+
+    nav a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 10px;
+      color: #222;
+    }
+
+    .footer {
+      background-color: #ffffff;
+      padding: 80px 0 20px 0;
+    }
+
+
+    .footer-col {
+      width: 25%;
+      padding: 0 15px;
+    }
+
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    .footer-col ul li{
+      list-style-type: none;
+    }
+
+    .footer-col ul li a {
+      color: #373837;
+      display: block;
+      font-size: 1rem;
+      font-weight: 300;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #373837;
+      padding-left: 7px;
+    }
+
+    .footer-col .social-links a {
+      color: #373837;
+      background-color: rgba(255, 255, 255, 0.2);
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      text-align: center;
+      margin: 0 10px 10px 0;
+      line-height: 40px;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: #151515;
+      background-color: #373837;
+    }
+
+    @media(max-width: 767px) {
+      .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media(max-width: 574px) {
+      .footer-col {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="sticky">
+    <img src="TomboLogo.jpg" alt="tombo log" width="100px" height="60px">
+    <nav>
+      <a href="#brands">Our Brands</a>
+      <a href="#footer">Contact Us</a>
+      </nav>
+  </header>
+  <section class="container-fluid">
+    <section class="header-content">
+      <section class="section-3">
+        <div class="row">
+          <p style="color: #009690;
+          font-size: 3vw;
+      
+          font-weight: 400;
+          word-wrap: break-word">Welcome to</p>
+          <h1 style="color: #373837;
+          font-size: 6vw;
+          font-weight: 700;">Tombo Enterprise</h1>
+        </div>
+        <div class="row" style="margin-top: 3em;">
+          <h3 style="color: #373837;
+          font-size: 3vw;
+          font-weight: 700;
+          word-wrap: break-word">Our brands</h3>
+          <p style="color: #373837;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 22px;">We currently have two brands under our umbrella: My Harmonica World and Tian Xian
+            Liquid. Learn more about
+            the individual brands by visiting their websites.</p>
+        </div>
+        <div class="row" style="display: flex;" id="brands">
+          <div class="card">
+            <div class="img">
+              <img src="https://old.myharmonicaworld.com/templates/pajuh/images/logo.png" />
+            </div>
+            <div class="content">
+              <p>
+                Established in 1990, by Malaysian renowned harmonicist, Mr. Chong Ah Kow, the 2nd World Harmonica
+                Championship (tremolo harmonica category), Germany.
+              </p>
+              <div style="text-align: right;">
+                <a style="color: white; text-decoration:none; font-size: 15px;" href="http://myharmonicaworld.com/"
+                  target="_blank">View Website <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                  </svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img">
+              <img src="https://www.tianxianliquid.com/images/logo.svg" />
+            </div>
+            <div class="content">
+              <p>
+                Since 1993, Tombo Enterprise has been appointed by China-Japan Feida Union Co. Ltd. as the sole agent of Tian Xian Liquid series in Malaysia and become an active cancer fighter.
+              </p>
+              <div style="text-align: right;">
+                <a style="color: white; text-decoration:none; font-size: 15px;" href="https://www.tianxianliquid.com/" target="_blank">View Website <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                  </svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+  <footer class="footer" id="footer">
+		<div style="max-width: 1170px;margin: auto;display: flex;flex-wrap: wrap;">
+      <div class="footer-col">
+				<img src="TomboLogo.jpg" width="180px" height="100px" alt="">
+			</div>
+			<div class="footer-col">
+				<a href="https://g.co/kgs/YKhcdH" style="color:#373837; text-decoration:none">8.18, 8th Floor, Wisma Zelan.1 Jalan Tasik Permaisuri 2, Bandar Tun Razak, Cheras, 56000 Kuala Lumpur, Federal Territory of Kuala Lumpur</a>
+			</div>
+			<div class="footer-col">
+				<ul>
+					<li><a href="#">03-91722980</a></li>
+					<li><a href="mailto:enquiry@tombo.com.my">enquiry@tombo.com.my</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<ul>
+					<li><a href="www.facebook.com/TomboCare">www.facebook.com/TomboCare</a></li>
+				</ul>
+			</div>
+		</div>
+    <div style="text-align: center; margin-top: 4em;">
+      <p>© Copyright  Tombo Enterprise Sdn Bhd. All Rights Reserved.</p>
+    </div>
+	</footer>
+</body>
+
+</html>
